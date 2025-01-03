@@ -355,7 +355,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                       )
                     : Padding(
                         padding: widget.bottomActions == null
-                            ? const EdgeInsets.all(0.0)
+                            ? const EdgeInsets.all(8.0)
                             : widget.actionsPadding,
                         child: Row(
                           children: widget.bottomActions ??
@@ -368,8 +368,10 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                                   colors: widget.progressColors,
                                 ),
                                 const RemainingDuration(),
-                                const PlaybackSpeedButton(),
-                                const FullScreenButton(),
+                                if (controller.flags.showSpeedButton)
+                                  const PlaybackSpeedButton(),
+                                if (controller.flags.showFullscreenButton)
+                                  const FullScreenButton(),
                               ],
                         ),
                       ),
@@ -388,7 +390,7 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
                 child: Padding(
                   padding: widget.actionsPadding,
                   child: Row(
-                    children: widget.topActions ?? [Container()],
+                    children: widget.topActions ?? [const SizedBox()],
                   ),
                 ),
               ),

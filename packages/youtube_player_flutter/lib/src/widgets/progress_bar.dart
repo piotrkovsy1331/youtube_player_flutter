@@ -167,6 +167,7 @@ class _ProgressBarState extends State<ProgressBar> {
         _dragEndActions();
       },
       onHorizontalDragCancel: _dragEndActions,
+      onTap: () {},
       child: Container(
         color: Colors.transparent,
         constraints: const BoxConstraints.expand(height: 7.0 * 2),

@@ -79,6 +79,16 @@ class YoutubePlayerFlags {
   /// Default is true.
   final bool showLiveFullscreenButton;
 
+  /// Defines whether to show or hide the fullscreen button in normal players.
+  ///
+  /// Default is true.
+  final bool showFullscreenButton;
+
+  /// Defines whether to show the playback speed button in the bottom action bar.
+  ///
+  /// Default is true.
+  final bool showSpeedButton;
+
   /// Creates [YoutubePlayerFlags].
   const YoutubePlayerFlags({
     this.hideControls = false,
@@ -96,6 +106,8 @@ class YoutubePlayerFlags {
     this.endAt,
     this.useHybridComposition = true,
     this.showLiveFullscreenButton = true,
+    this.showFullscreenButton = true,
+    this.showSpeedButton = true,
   });
 
   /// Copies new values assigned to the [YoutubePlayerFlags].
@@ -116,6 +128,8 @@ class YoutubePlayerFlags {
     bool? controlsVisibleAtStart,
     bool? useHybridComposition,
     bool? showLiveFullscreenButton,
+    bool? showFullscreenButton,
+    bool? showSpeedButton,
   }) {
     return YoutubePlayerFlags(
       autoPlay: autoPlay ?? this.autoPlay,
@@ -135,6 +149,8 @@ class YoutubePlayerFlags {
       useHybridComposition: useHybridComposition ?? this.useHybridComposition,
       showLiveFullscreenButton:
           showLiveFullscreenButton ?? this.showLiveFullscreenButton,
+      showFullscreenButton: showFullscreenButton ?? this.showFullscreenButton,
+      showSpeedButton: showSpeedButton ?? this.showSpeedButton,
     );
   }
 }
